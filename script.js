@@ -170,7 +170,7 @@
     var html = '<h3 id="overlay-title">' + title + '</h3><p>' + text + '</p>' +
       '<div class="gal"><div class="track" aria-label="' + title + ' photos">' +
       imgs.map(function (s, i) {
-        return '<img src="images/' + s + '" alt="' + (alts[i] || '') + '" loading="lazy">';
+        return '<img src="' + s + '" alt="' + (alts[i] || '') + '" loading="lazy">';
       }).join('') +
       '</div><button class="gnav p" type="button" aria-label="Previous photo">&#8249;</button>' +
       '<button class="gnav n" type="button" aria-label="Next photo">&#8250;</button>' +
