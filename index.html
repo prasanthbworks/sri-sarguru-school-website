@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sri Sarguru Matriculation School | Theethipalayam, Coimbatore</title>
 <meta name="description" content="Govt. approved matriculation school in Theethipalayam, Coimbatore. Pre-KG to 10th Standard, Tamil Nadu State Board, with a Diploma in Computer Science by Grade 9.">
-<link rel="icon" href="logo.jpg" type="image/jpeg">
-<link rel="apple-touch-icon" href="logo.jpg">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://sri-sarguru-school-website.vercel.app/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Sri Sarguru Matriculation School">
@@ -33,12 +34,12 @@
     </a>
     <button class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="menu">&#9776;</button>
     <div class="menu" id="menu">
-      <a href="index.html" class="active">Home</a>
-      <a href="index.html#why">Why Us</a>
-      <a href="index.html#academics">Academics</a>
-      <a href="index.html#life">Learning Beyond</a>
+      <a href="index.html#top" data-spy class="active">Home</a>
+      <a href="index.html#why" data-spy>Why Us</a>
+      <a href="index.html#academics" data-spy>Academics</a>
+      <a href="index.html#life" data-spy>Learning Beyond</a>
       <a href="about.html">Our School</a>
-      <a href="index.html#contact">Contact</a>
+      <a href="index.html#contact" data-spy>Contact</a>
       <div class="socials-nav">
         <a href="https://www.instagram.com/srisargurumatriculationschool" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.9.2 2.3.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1.1.4 2.3.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.9-.4 2.3-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1.1.4-2.3.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.9-.2-2.3-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1.1-.4-2.3C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.9.4-2.3.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1.1-.4 2.3-.4 1.2-.1 1.6-.1 4.8-.1zm0 5.6a4.2 4.2 0 100 8.4 4.2 4.2 0 000-8.4zm0 6.9a2.7 2.7 0 110-5.4 2.7 2.7 0 010 5.4zm5.4-7.1a1 1 0 11-2 0 1 1 0 012 0z"/></svg></a>
         <a href="https://www.facebook.com/profile.php?id=61589518446444" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.2h-3.1V7.7c0-.9.3-1.6 1.7-1.6h1.5V3.2c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.4-4 4.1v2.6H7.5V13h2.8v8h3.2z"/></svg></a>
@@ -64,7 +65,7 @@
 
 <div class="stats">
   <div class="wrap stats-in">
-    <div class="stat"><b>25+ Years</b><span>Serving Theethipalayam since 2000</span></div>
+    <div class="stat"><b>25+ Years</b><span>Nurturing beautiful minds since 2000</span></div>
     <div class="stat"><b>5 &rarr; 500+</b><span>From five students to a full campus</span></div>
     <div class="stat"><b>100% Results</b><span>Ten consecutive years</span></div>
   </div>
@@ -121,8 +122,16 @@
 
 <section id="academics">
   <div class="wrap split rev rise">
-    <div class="framed">
-      <img src="suits-diploma.jpg" alt="A student in graduation robes holding his Diploma in Computer Science" loading="lazy">
+    <div class="suits-marks">
+      <img class="mark" src="suits-mark.png" alt="SUITS &mdash; School-University Industry-Tie-up Scheme" loading="lazy" width="760" height="331">
+      <span class="rule"></span>
+      <div class="suits-uni">
+        <img src="bdu-emblem.png" alt="Bharathidasan University emblem" loading="lazy" width="360" height="360">
+        <div>
+          <b>Bharathidasan University</b>
+          <span>IECD &middot; Tiruchirappalli</span>
+        </div>
+      </div>
     </div>
     <div class="split-txt">
       <div class="eyebrow">The SUITS Advantage</div>
@@ -162,7 +171,7 @@
       <button class="tile" type="button" data-moment="sports"><img src="m-sports-1.jpg" alt="" loading="lazy"><div class="ttxt"><h3>Sports Day</h3><span>Track, field &amp; team spirit</span></div></button>
       <button class="tile" type="button" data-moment="yoga"><img src="m-yoga-1.jpg" alt="" loading="lazy"><div class="ttxt"><h3>Yoga Day</h3><span>Stillness &amp; strength</span></div></button>
       <button class="tile" type="button" data-moment="olympiad"><img src="m-olympiad-1.jpg" alt="" loading="lazy"><div class="ttxt"><h3>Olympiad Achievers</h3><span>Medals &amp; certificates</span></div></button>
-      <button class="tile" type="button" data-moment="citizens"><img src="m-citizens-1.jpg" alt="" loading="lazy"><div class="ttxt"><h3>Building Responsible Citizens</h3><span>Awareness in action</span></div></button>
+      <button class="tile" type="button" data-moment="citizens"><img src="m-citizens-2.jpg" alt="" loading="lazy"><div class="ttxt"><h3>Building Responsible Citizens</h3><span>Awareness in action</span></div></button>
       <button class="tile" type="button" data-moment="rsp"><img src="m-rsp-1.jpg" alt="" loading="lazy"><div class="ttxt"><h3>Road Safety Patrol</h3><span>Leadership &amp; duty</span></div></button>
       <button class="tile" type="button" data-moment="graduation"><img src="m-graduation-1.jpg" alt="" loading="lazy"><div class="ttxt"><h3>Graduation Day</h3><span>UKG moving up to Grade 1</span></div></button>
       <button class="tile" type="button" data-moment="culture"><img src="m-culture-1.jpg" alt="" loading="lazy"><div class="ttxt"><h3>Cultural Programmes</h3><span>Stage, song &amp; celebration</span></div></button>
@@ -173,7 +182,7 @@
 <section class="strip-sec">
   <div class="strip-head">
     <div class="eyebrow">Life at Sri Sarguru</div>
-    <h2>A year in pictures</h2>
+    <h2>Moments over the years</h2>
   </div>
   <div class="marquee">
     <div class="marquee-track">
@@ -239,10 +248,24 @@
     </div>
     <div class="vids rise">
       <div class="vframe wide">
-        <iframe src="https://www.youtube-nocookie.com/embed/GAPZdchaarg" title="Annual sports festival at Sri Sarguru Matriculation School" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <button class="vfacade" type="button" data-video="GAPZdchaarg"
+                data-label="Annual sports festival at Sri Sarguru Matriculation School"
+                aria-label="Play: annual sports festival">
+          <img src="https://i.ytimg.com/vi/GAPZdchaarg/maxresdefault.jpg" alt="" loading="lazy"
+               onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/GAPZdchaarg/hqdefault.jpg'">
+          <span class="vplay"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="vlabel">Annual sports festival</span>
+        </button>
       </div>
       <div class="vframe tall">
-        <iframe src="https://www.youtube-nocookie.com/embed/UBqHcsB_Igs" title="Sri Sarguru Matriculation School — short film" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <button class="vfacade" type="button" data-video="UBqHcsB_Igs"
+                data-label="Sri Sarguru Matriculation School — short film"
+                aria-label="Play: a short film about the school">
+          <img src="https://i.ytimg.com/vi/UBqHcsB_Igs/maxresdefault.jpg" alt="" loading="lazy"
+               onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/UBqHcsB_Igs/hqdefault.jpg'">
+          <span class="vplay"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="vlabel">A short film about the school</span>
+        </button>
       </div>
     </div>
   </div>
@@ -262,7 +285,7 @@
       </ol>
     </div>
     <div class="form-card rise">
-      <iframe data-tally-src="https://tally.so/embed/68yjRB?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="760" frameborder="0" marginheight="0" marginwidth="0" title="Admission Enquiry"></iframe>
+      <iframe data-tally-src="https://tally.so/embed/68yjRB?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" width="100%" height="760" frameborder="0" marginheight="0" marginwidth="0" title="Admission Enquiry"></iframe>
       <noscript><p style="padding:12px;color:#5b6079">The enquiry form needs JavaScript. You can also enquire at <a href="https://tally.so/r/68yjRB" style="color:#b93a2b;font-weight:700">tally.so/r/68yjRB</a> or call the school.</p></noscript>
     </div>
   </div>
@@ -316,8 +339,8 @@
        data-alts="Olympiad achievers with medals and certificates|Students receiving their Olympiad awards"></div>
   <div id="moment-citizens" data-title="Building Responsible Citizens"
        data-text="Awareness begins early here. Our children make posters, take the pledge and walk through the neighbourhood with placards — learning to say no to tobacco, alcohol and drugs long before anyone offers."
-       data-imgs="m-citizens-1.jpg,m-citizens-2.jpg,m-citizens-3.jpg"
-       data-alts="Students on an awareness walk|Children with awareness posters|Students taking the pledge"></div>
+       data-imgs="m-citizens-2.jpg,m-citizens-1.jpg,m-citizens-3.jpg"
+       data-alts="Children with awareness posters|A student holding his anti-drugs poster|Students taking the pledge"></div>
   <div id="moment-rsp" data-title="Road Safety Patrol"
        data-text="Our Road Safety Patrol students help manage safe movement at the school gate each morning — a small duty that teaches leadership, discipline and care for others."
        data-imgs="m-rsp-1.jpg,m-rsp-2.jpg"

@@ -33,9 +33,9 @@
 
   /* ---------------- Scrollspy ----------------
      Highlights whichever section is currently in view. */
-  var spyLinks = [].slice.call(document.querySelectorAll('.menu > a[href*="#"]'));
+  var spyLinks = [].slice.call(document.querySelectorAll('.menu > a[data-spy]'));
   var targets = spyLinks.map(function (a) {
-    var id = a.getAttribute('href').split('#')[1];
+    var id = (a.getAttribute('href') || '').split('#')[1];
     return id ? document.getElementById(id) : null;
   });
 
@@ -47,8 +47,8 @@
       var top = el.offsetTop;
       if (top <= line && top > bestTop) { bestTop = top; best = i; }
     });
-    /* at the very top, nothing is "current" past the hero */
-    if (scrollY < 120) best = -1;
+    /* above the first section the hero is showing, so Home is current */
+    if (scrollY < 120) best = 0;
     spyLinks.forEach(function (a, i) {
       a.classList.toggle('active', i === best);
     });
@@ -68,12 +68,23 @@
   /* ---------------- Reveal on scroll ---------------- */
   var rises = [].slice.call(document.querySelectorAll('.rise'));
   if ('IntersectionObserver' in window && !reduceMotion) {
-    var ro = new IntersectionObserver(function (entries) {
+    /* Reveals: play on entry, and arm again once the element is clear of the
+       viewport, so scrolling back through a section fades it in a second time.
+       Two observers, because the reset needs a looser boundary than the reveal
+       -- resetting at the same edge makes elements flicker at the fold. */
+    var show = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add('in'); ro.unobserve(en.target); }
+        if (en.isIntersecting) en.target.classList.add('in');
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-    rises.forEach(function (el) { ro.observe(el); });
+
+    var arm = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) en.target.classList.remove('in');
+      });
+    }, { threshold: 0, rootMargin: '160px 0px 160px 0px' });
+
+    rises.forEach(function (el) { show.observe(el); arm.observe(el); });
   } else {
     rises.forEach(function (el) { el.classList.add('in'); });
   }
@@ -202,6 +213,51 @@
       }
     });
   }
+
+  /* ---------------- Videos ----------------
+     Nothing loads from YouTube until a thumbnail is clicked, and opening one
+     closes the other, so two soundtracks can never play at once. */
+  var facades = [].slice.call(document.querySelectorAll('.vfacade'));
+
+  function closeVideos(except) {
+    facades.forEach(function (f) {
+      if (f === except) return;
+      var frame = f.parentNode.querySelector('iframe');
+      if (frame) frame.parentNode.removeChild(frame);
+      f.hidden = false;
+    });
+  }
+
+  facades.forEach(function (f) {
+    f.addEventListener('click', function () {
+      closeVideos(f);
+      var id = f.dataset.video;
+      if (!id) return;
+      var frame = document.createElement('iframe');
+      frame.src = 'https://www.youtube-nocookie.com/embed/' + id +
+                  '?autoplay=1&rel=0&modestbranding=1';
+      frame.title = f.dataset.label || 'Video';
+      frame.setAttribute('allow',
+        'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+      frame.setAttribute('allowfullscreen', '');
+      f.parentNode.appendChild(frame);
+      f.hidden = true;
+    });
+  });
+
+  /* ---------------- Enquiry form ----------------
+     Tally's own script fills the iframe in, but on a cold first load it can
+     arrive too late. Fall back to setting the source directly. */
+  function loadTally() {
+    if (typeof Tally !== 'undefined' && Tally.loadEmbeds) { Tally.loadEmbeds(); }
+    [].slice.call(document.querySelectorAll('iframe[data-tally-src]')).forEach(function (f) {
+      if (!f.src) f.src = f.dataset.tallySrc;
+    });
+  }
+  loadTally();
+  addEventListener('load', loadTally);
+  setTimeout(loadTally, 1200);
+  setTimeout(loadTally, 3500);
 
   /* ---------------- Marquee: duplicate for a seamless loop ---------------- */
   var mt = document.querySelector('.marquee-track');
