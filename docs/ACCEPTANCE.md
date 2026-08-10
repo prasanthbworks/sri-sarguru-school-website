@@ -72,13 +72,15 @@ issue list.
 |---|---|---|
 | 4.1 | Does the site represent the school as the school wants to be seen? | |
 | 4.2 | Is there anything a parent would look for that is missing? | |
-| 4.3 | How often does the school expect to change content on the site? | |
+| 4.3 | Does the school expect to take over content updates itself, and if so, when? | |
 
 Question 4.3 is not a formality. The site was built as static files, which
-makes it free to host and durable, but means content changes require a
-developer. If the school expects to publish notices itself, the current
-architecture is the wrong fit and a different platform should be recommended —
-even though that means recommending against the delivered solution.
+makes it free to host and durable, but means content changes require someone
+comfortable editing HTML. That is currently handled from the delivery side as an
+interim arrangement with no agreed end date. If the school expects to take it
+over, the current architecture is the wrong fit and a different platform should
+be recommended — even though that means recommending against the delivered
+solution.
 
 ---
 
