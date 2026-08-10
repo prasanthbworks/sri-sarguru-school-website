@@ -191,5 +191,6 @@ confirmation of the content figures currently held only as a verbal assurance.
 custom 404 page. Resolve or replace the form to fix the iOS validation defect.
 Measure colour contrast and run a screen-reader pass.
 
-**Decide.** Whether the school needs self-service content editing. That answer
-determines whether this architecture remains correct.
+**Decide.** Who maintains content once the current interim arrangement ends.
+The static architecture is correct only while someone comfortable editing HTML
+is available. That answer determines whether this design remains right.
